@@ -1,0 +1,35 @@
+.btn {
+    @apply cursor-pointer inline-block px-8 py-3 text-base font-bold text-center text-white transition-colors duration-150 ease-in-out rounded-md;
+}
+
+.btn.btn-xs {
+    @apply px-3 py-1 text-xs;
+}
+
+.btn.btn-sm {
+    @apply px-4 py-2 text-sm;
+}
+
+.btn.btn-lg {
+    @apply px-10 py-4 text-lg;
+}
+
+.btn.btn-xl {
+    @apply px-12 py-5 text-xl;
+}
+
+.btn:disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+.btn.btn-primary {
+    @apply bg-primary;
+}
+
+.btn.btn-primary:hover:enabled {
+    @apply bg-gradient-to-r from-primary-400 to-primary-200;
+}
+
+.btn.btn-secondary {
+    @apply bg-secondary;
+}
