@@ -6,15 +6,17 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Involve Hub</title>
-      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-ed697ddf.js"></script>
-      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-1efdb188.css">
+      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-933bfeb5.js"></script>
+      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-e09bfd3f.css">
     </head>
     <body class="p-0 m-0">
-        <main id="app" class="bg-white w-screen h-screen">
+        <main id="app" class="bg-white w-full h-screen">
             <nav
-                class="fixed h-[126px] lg:h-[105px] w-full flex gap-4 px-8 bg-white justify-between items-center z-50"
+                class="fixed h-24 w-full flex gap-4 px-8 bg-white justify-between items-center z-50"
             >
-                <div class="h-full min-w-[50px] max-w-[220px] py-4 cursor-pointer">
+                <div
+                    class="h-full min-w-[10rem] max-w-[220px] py-4 cursor-pointer"
+                >
                     <img
                         class="h-full object-contain"
                         src="/involvehub-home-new-design/assets/ih_logo-0f072c27.svg"
@@ -24,10 +26,10 @@
                 <div class="hidden lg:flex gap-10 items-center">
                     <ul class="flex gap-10 text-lg font-semibold">
                         <li class="whitespace-nowrap">
-                            <a href="#">Engagement</a>
+                            <a href="#section-1">Engagement</a>
                         </li>
                         <li class="whitespace-nowrap">
-                            <a href="#">Metrics</a>
+                            <a href="#section-2">Metrics</a>
                         </li>
                         <li class="whitespace-nowrap">
                             <a href="#">Security</a>
@@ -49,46 +51,106 @@
                 </div>
             </nav>
             <section
-                class="w-full h-screen bg-[url('/img/background_hero.webp')] bg-cover flex justify-center items-center"
+            id="section-1"
+                class="w-full pt-24 pb-4 min-h-[100vh] bg-[url('/img/background_hero.svg')] bg-cover flex justify-center items-center"
             >
                 <div
                     class="w-full text-white grid grid-cols-1 lg:grid-cols-2 gap-4 px-8 lg:px-20"
                 >
-                    <p class="text-3xl lg:text-4xl">
-                        Amplify Your Corporate
-                        <span class="font-bold">Social Responsibility</span>
-                    </p>
-                    <div class="max-w-[500px] lg:row-span-3 grid grid-cols-2 gap-4">
-                        <img
-                            class="shadow-lg rounded-lg outline outline-white outline-8 transform rotate-0"
-                            src="/involvehub-home-new-design/assets/hero_picture_1-69a26ece.webp"
-                            alt=""
-                        />
-                        <img
-                            class="shadow-lg rounded-lg outline outline-white outline-8 row-span-2 transform rotate-12 z-10"
-                            src="/involvehub-home-new-design/assets/hero_picture_3-fe921cc2.webp"
-                            alt=""
-                        />
-                        <img
-                            class="shadow-lg rounded-lg outline outline-white outline-8 transform -rotate-6"
-                            src="/involvehub-home-new-design/assets/hero_picture_2-b66b2a2f.webp"
-                            alt=""
-                        />
+                    <div>
+                        <p class="text-3xl lg:text-4xl">
+                            Amplify Your Corporate
+                            <span class="font-bold">Social Responsibility</span>
+                        </p>
                     </div>
-                    <p class="text-base lg:text-lg">
-                        We help you drive corporate missions and Corporate
-                        Social Responsibility events through social media.
-                    </p>
-                    <div class="w-full flex flex-col md:items-center lg:flex-row">
+                    <div class="flex justify-center items-center lg:row-span-3">
+                        <div class="max-w-[500px] grid grid-cols-2 gap-4">
+                            <img
+                                class="shadow-lg rounded-lg outline outline-white outline-8 transform rotate-0"
+                                src="/involvehub-home-new-design/assets/hero_picture_1-69a26ece.webp"
+                                alt=""
+                            />
+                            <img
+                                class="shadow-lg rounded-lg outline outline-white outline-8 row-span-2 transform rotate-12 z-10"
+                                src="/involvehub-home-new-design/assets/hero_picture_3-fe921cc2.webp"
+                                alt=""
+                            />
+                            <img
+                                class="shadow-lg rounded-lg outline outline-white outline-8 transform -rotate-6"
+                                src="/involvehub-home-new-design/assets/hero_picture_2-b66b2a2f.webp"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-base lg:text-lg">
+                            We help you drive corporate missions and Corporate
+                            Social Responsibility events through social media.
+                        </p>
+                    </div>
+                    <div
+                        class="w-full flex flex-col md:items-center lg:flex-row"
+                    >
                         <button class="btn btn-lg btn-primary">
                             GET A DEMO
                         </button>
                     </div>
                 </div>
             </section>
-            <section
-                class="w-full h-screen flex justify-center items-center"
-            ></section>
+            <section id="section-2" class="w-full min-h-[100vh] pt-24 pb-4 px-4">
+                <p class="text-primary text-center text-3xl">
+                    <span class="font-bold">Engaged Employees</span>
+                    Deliver Better Results
+                </p>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center text-primary-500"
+                >
+                    <div class="flex flex-col text-center max-w-[20rem]">
+                        <img
+                            class="h-60"
+                            src="/involvehub-home-new-design/assets/illustration_1-b204ea2b.svg"
+                            alt=""
+                        />
+                        <p class="text-5xl font-bold">80%</p>
+                        <p class="">
+                            Employees want to work for a company that
+                            contributes to society.
+                        </p>
+                    </div>
+                    <div class="flex flex-col text-center max-w-[20rem]">
+                        <img
+                            class="h-60"
+                            src="/involvehub-home-new-design/assets/illustration_2-14fe0013.svg"
+                            alt=""
+                        />
+                        <p class="text-5xl font-bold">50%</p>
+                        <p class="">Increase in employee retention.</p>
+                    </div>
+                    <div class="flex flex-col text-center max-w-[20rem]">
+                        <img
+                            class="h-60"
+                            src="/involvehub-home-new-design/assets/illustration_3-010ec837.svg"
+                            alt=""
+                        />
+                        <p class="text-5xl font-bold">90%</p>
+                        <p class="">
+                            Companies in the S&P 500 that participate in CSR.
+                        </p>
+                    </div>
+                    <div class="flex flex-col text-center max-w-[20rem]">
+                        <img
+                            class="h-60"
+                            src="/involvehub-home-new-design/assets/illustration_4-1f640278.svg"
+                            alt=""
+                        />
+                        <p class="text-5xl font-bold">1x to 2x</p>
+                        <p class="">
+                            Of employee annual salary saved for every retained
+                            employee.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </main>
         
     </body>
