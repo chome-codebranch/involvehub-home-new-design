@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/involvehub-home-new-design/ih_isotype.svg" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Involve Hub - Style Guide</title>
+      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-ed697ddf.js"></script>
+      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-1efdb188.css">
+    </head>
+    <body class="p-4">
+        <h1 class="text-5xl font-semibold">Headline/Bold 1</h1>
+        <h2 class="text-4xl font-semibold">Headline/Bold 2</h2>
+        <h3 class="text-3xl font-semibold">Headline/Bold 3</h3>
+        <h4 class="text-2xl font-semibold">Headline/Bold 4</h4>
+        <h5 class="text-xl font-semibold">Headline/Bold 5</h5>
+        <h6 class="text-lg font-semibold">Headline/Bold 6</h6>
+
+        <hr class="m-4" />
+
+        <h1 class="text-5xl">Hedline/Regular 1</h1>
+        <h2 class="text-4xl">Hedline/Regular 2</h2>
+        <h3 class="text-3xl">Hedline/Regular 3</h3>
+        <h4 class="text-2xl">Hedline/Regular 4</h4>
+        <h5 class="text-xl">Hedline/Regular 5</h5>
+        <h6 class="text-lg">Hedline/Regular 6</h6>
+
+        <hr class="m-4" />
+
+        <p class="text-lg font-semibold">Paragraph/Big Text/Bold</p>
+        <p class="text-lg">Paragraph/Big Text/Regular</p>
+        <p class="text-base font-semibold">Paragraph/Normal Text/Bold</p>
+        <p class="text-base">Paragraph/Normal Text/Regular</p>
+        <p class="text-sm font-semibold">Paragraph/Small Text/Bold</p>
+        <p class="text-sm">Paragraph/Small Text/Regular</p>
+
+        <hr class="m-4" />
+
+        <div
+            class="w-full h-9 bg-gradient-to-r from-secondary to-primary"
+        ></div>
+
+        <hr class="m-4" />
+
+        <div x-data="{ disabled: false }">
+            <div class="my-4">
+                <input id="disabled" type="checkbox" x-model="disabled" />
+                <label for="disabled">Disabled</label>
+            </div>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            >
+                <div class="w-full flex flex-col gap-4 items-baseline">
+                    <button class="btn btn-xs btn-primary" :disabled="disabled">
+                        GET A DEMO
+                    </button>
+                    <button class="btn btn-sm btn-primary" :disabled="disabled">
+                        GET A DEMO
+                    </button>
+                    <button class="btn btn-primary" :disabled="disabled">
+                        GET A DEMO
+                    </button>
+                    <button class="btn btn-lg btn-primary" :disabled="disabled">
+                        GET A DEMO
+                    </button>
+                    <button class="btn btn-xl btn-primary" :disabled="disabled">
+                        GET A DEMO
+                    </button>
+                </div>
+                <div class="w-full flex flex-col gap-4 items-baseline">
+                    <button
+                        class="btn btn-xs btn-secondary"
+                        :disabled="disabled"
+                    >
+                        GET A DEMO
+                    </button>
+                    <button
+                        class="btn btn-sm btn-secondary"
+                        :disabled="disabled"
+                    >
+                        GET A DEMO
+                    </button>
+                    <button class="btn btn-secondary" :disabled="disabled">
+                        GET A DEMO
+                    </button>
+                    <button
+                        class="btn btn-lg btn-secondary"
+                        :disabled="disabled"
+                    >
+                        GET A DEMO
+                    </button>
+                    <button
+                        class="btn btn-xl btn-secondary"
+                        :disabled="disabled"
+                    >
+                        GET A DEMO
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="m-4" />
+        
+    </body>
+</html>
