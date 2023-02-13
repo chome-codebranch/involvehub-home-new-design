@@ -35,6 +35,15 @@ module.exports = {
                     DEFAULT: "#FD7C5F",
                 },
             },
+            animation: {
+                "toast": "fade 1s linear 1s forwards",
+            },
+            keyframes: {
+                fade: {
+                    "0%": { opacity: 1 },
+                    "100%": { opacity: 0 },
+                },
+            },
         },
     },
     plugins: [],

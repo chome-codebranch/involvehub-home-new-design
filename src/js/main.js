@@ -1,8 +1,5 @@
 import Alpine from "alpinejs";
 
-// window.Alpine = Alpine;
-
-
 Alpine.store("menu", {
     isOpen: false,
     open: function () {
