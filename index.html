@@ -6,36 +6,78 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Involve Hub</title>
-      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-933bfeb5.js"></script>
-      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-e09bfd3f.css">
+      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-9a5efa22.js"></script>
+      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-c172595e.css">
     </head>
     <body class="p-0 m-0">
+        <div
+            x-data
+            class="invisible fixed z-50 w-screen h-screen bg-black/50 opacity-0 transition-[opacity,visibility] duration-500"
+            :class="$store.menu.isOpen && '!visible lg:hidden opacity-100'"
+        ></div>
+        <nav
+            x-data
+            class="fixed invisible z-50 top-0 left-0 w-80 h-screen shadow-lg rounded-r-xl bg-white -translate-x-full transition-[visibility,transform] duration-[500ms,500ms] ease-in-out"
+            :class="$store.menu.isOpen && '!visible lg:hidden translate-x-0 transition-[visibility,transform] duration-[0s,500ms]'"
+        >
+            <div class="w-full h-full flex flex-col justify-between">
+                <div class="w-full top-0 flex flex-row justify-between p-4">
+                    <img class="w-3/4" src="/involvehub-home-new-design/assets/ih_logo-0f072c27.svg" alt="" />
+                    <button
+                        class=""
+                        aria-label="close menu"
+                        @click="$store.menu.close()"
+                    >
+                        <img src="/involvehub-home-new-design/assets/close-57022eb6.svg" alt="" srcset="" />
+                    </button>
+                </div>
+                <div class="w-full grow pt-6 pl-16">
+                    <ul class="text-2xl font-semibold flex flex-col gap-5">
+                        <li>Item</li>
+                        <li>Item</li>
+                        <li>Item</li>
+                        <li>Item</li>
+                        <li>Item</li>
+                    </ul>
+                </div>
+                <div class="flex px-7 py-10">
+                    <button
+                        class="btn btn-primary w-full"
+                        aria-label="get a demo"
+                    >
+                        GET A DEMO
+                    </button>
+                </div>
+            </div>
+        </nav>
         <main id="app" class="bg-white w-full h-screen">
             <nav
-                class="fixed h-24 w-full flex gap-4 px-8 bg-white justify-between items-center z-50"
+                class="fixed h-24 w-full shadow-lg flex gap-4 px-8 justify-between items-center z-40 backdrop-blur-md bg-white/80"
             >
                 <div
                     class="h-full min-w-[10rem] max-w-[220px] py-4 cursor-pointer"
                 >
-                    <img
-                        class="h-full object-contain"
-                        src="/involvehub-home-new-design/assets/ih_logo-0f072c27.svg"
-                        alt="Involve Hub"
-                    />
+                    <a href="#home">
+                        <img
+                            class="h-full object-contain"
+                            src="/involvehub-home-new-design/assets/ih_logo-0f072c27.svg"
+                            alt="Involve Hub"
+                        />
+                    </a>
                 </div>
                 <div class="hidden lg:flex gap-10 items-center">
                     <ul class="flex gap-10 text-lg font-semibold">
                         <li class="whitespace-nowrap">
-                            <a href="#section-1">Engagement</a>
+                            <a href="#engagement">Engagement</a>
                         </li>
                         <li class="whitespace-nowrap">
-                            <a href="#section-2">Metrics</a>
+                            <a href="#metrics">Metrics</a>
                         </li>
                         <li class="whitespace-nowrap">
-                            <a href="#">Security</a>
+                            <a href="#security">Security</a>
                         </li>
                         <li class="whitespace-nowrap">
-                            <a href="#">Solutions</a>
+                            <a href="#solutions">Solutions</a>
                         </li>
                         <li class="whitespace-nowrap">
                             <a href="#">Comunications</a>
@@ -44,15 +86,19 @@
                             <a href="#">Social Media</a>
                         </li>
                     </ul>
-                    <button class="btn btn-primary">GET A DEMO</button>
+                    <button class="btn btn-primary" aria-label="get a demo">
+                        GET A DEMO
+                    </button>
                 </div>
-                <div class="lg:hidden cursor-pointer">
-                    <img src="/involvehub-home-new-design/assets/navigation_button-c00e04fb.svg" alt="" />
+                <div x-data class="lg:hidden cursor-pointer">
+                    <button @click="$store.menu.open()" aria-label="open menu">
+                        <img src="/involvehub-home-new-design/assets/navigation_button-c00e04fb.svg" alt="" />
+                    </button>
                 </div>
             </nav>
             <section
-            id="section-1"
-                class="w-full pt-24 pb-4 min-h-[100vh] bg-[url('/img/background_hero.svg')] bg-cover flex justify-center items-center"
+                id="home"
+                class="w-full pt-24 pb-4 min-h-[100vh] bg-[url('/img/background_hero.svg')] bg-cover bg-center flex justify-center items-center"
             >
                 <div
                     class="w-full text-white grid grid-cols-1 lg:grid-cols-2 gap-4 px-8 lg:px-20"
@@ -63,7 +109,9 @@
                             <span class="font-bold">Social Responsibility</span>
                         </p>
                     </div>
-                    <div class="flex justify-center items-center lg:row-span-3">
+                    <div
+                        class="flex justify-center items-center lg:row-span-3 my-5"
+                    >
                         <div class="max-w-[500px] grid grid-cols-2 gap-4">
                             <img
                                 class="shadow-lg rounded-lg outline outline-white outline-8 transform rotate-0"
@@ -91,14 +139,20 @@
                     <div
                         class="w-full flex flex-col md:items-center lg:flex-row"
                     >
-                        <button class="btn btn-lg btn-primary">
+                        <button
+                            class="btn btn-lg btn-primary"
+                            aria-label="get a demo"
+                        >
                             GET A DEMO
                         </button>
                     </div>
                 </div>
             </section>
-            <section id="section-2" class="w-full min-h-[100vh] pt-24 pb-4 px-4">
-                <p class="text-primary text-center text-3xl">
+            <section
+                id="engagement"
+                class="w-full min-h-[100vh] pt-24 pb-4 px-4 flex flex-col justify-around"
+            >
+                <p class="text-primary text-center text-3xl my-6">
                     <span class="font-bold">Engaged Employees</span>
                     Deliver Better Results
                 </p>
@@ -151,7 +205,150 @@
                     </div>
                 </div>
             </section>
+            <section id="metrics" class="w-full min-h-[100vh] pt-24 pb-4 px-4">
+                <p class="text-primary text-center text-3xl mt-6">
+                    <span class="font-bold">Fortune 500 Customer</span>
+                    Metrics and Results
+                </p>
+                <p class="text-lg text-center mb-6">
+                    Customer results and goals from the InvolveHub platform
+                </p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="rounded-lg bg-primary-50 py-6 px-7 order-1">
+                        <div class="flex gap-3 items-center">
+                            <div
+                                class="rounded-full bg-white w-7 h-7 flex justify-center items-center"
+                            >
+                                <span
+                                    class="text-lg leading-none text-primary-300 font-bold"
+                                >
+                                    1
+                                </span>
+                            </div>
+                            <p class="text-2xl text-primary-500">
+                                Retention & Recruiting
+                            </p>
+                        </div>
+                        <div class="text-primary-500">
+                            <p>
+                                <span class="font-bold">50%</span>
+                                increased employee retention.
+                            </p>
+                            <p>
+                                <span class="font-bold">30%</span>
+                                increased Millennial recruiting.
+                            </p>
+                            <p>
+                                <span class="font-bold">90% to 200%</span>
+                                of annual salary saved with each retained
+                                employee.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg object-cover overflow-hidden order-2">
+                        <img
+                            class="w-full"
+                            src="/involvehub-home-new-design/assets/step_1-4d1f7eab.webp"
+                            alt=""
+                            srcset=""
+                        />
+                    </div>
+                    <div class="rounded-lg bg-primary-50 py-6 px-7 order-3 lg:order-4">
+                        <div class="flex gap-3 items-center">
+                            <div
+                                class="rounded-full bg-white w-7 h-7 flex justify-center items-center"
+                            >
+                                <span
+                                    class="text-lg leading-none text-primary-300 font-bold"
+                                >
+                                    2
+                                </span>
+                            </div>
+                            <p class="text-2xl text-primary-500">
+                                Productivity & engagement
+                            </p>
+                        </div>
+                        <div class="text-primary-500">
+                            <p>
+                                <span class="font-bold">13%</span>
+                                increased productivity from employees involved
+                                in CSR activities.
+                            </p>
+                            <p>
+                                <span class="font-bold">7.5%</span>
+                                increased employee engagement across all company
+                                activities.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg object-cover overflow-hidden order-4 lg:order-3">
+                        <img
+                            class="w-full"
+                            src="/involvehub-home-new-design/assets/step_2-7b33439f.webp"
+                            alt=""
+                            srcset=""
+                        />
+                    </div>
+                    <div class="rounded-lg bg-primary-50 py-6 px-7 order-5">
+                        <div class="flex gap-3 items-center">
+                            <div
+                                class="rounded-full bg-white w-7 h-7 flex justify-center items-center"
+                            >
+                                <span
+                                    class="text-lg leading-none text-primary-300 font-bold"
+                                >
+                                    3
+                                </span>
+                            </div>
+                            <p class="text-2xl text-primary-500">
+                                Participation & Growth
+                            </p>
+                        </div>
+                        <div class="text-primary-500">
+                            <p>
+                                <span class="font-bold">2,500+</span>
+                                employees participating and growing weekly.
+                            </p>
+                            <p>
+                                <span class="font-bold">30,000</span>
+                                projected corporate volunteering hours per year.
+                            </p>
+                            <p>
+                                <span class="font-bold">2.5M</span>
+                                corporate volunteering hours goal in 24 months.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg object-cover overflow-hidden order-6">
+                        <img
+                            class="w-full"
+                            src="/involvehub-home-new-design/assets/step_3-6426de5c.webp"
+                            alt=""
+                            srcset=""
+                        />
+                    </div>
+                </div>
+            </section>
         </main>
+        <div
+            class="w-full fixed bottom-4 flex justify-center z-50 pointer-events-none"
+        >
+            <div
+                class="animate-toast hidden md:hidden lg:block py-4 px-7 rounded-full bg-white shadow-md"
+            >
+                <span>Desktop</span>
+            </div>
+            <div
+                class="animate-toast hidden md:block lg:hidden py-4 px-7 rounded-full bg-white shadow-md"
+            >
+                <span>Tablet</span>
+            </div>
+            <div
+                class="animate-toast block md:hidden lg:hidden py-4 px-7 rounded-full bg-white shadow-md"
+            >
+                <span>Mobile</span>
+            </div>
+        </div>
         
     </body>
 </html>
