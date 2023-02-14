@@ -34,6 +34,10 @@ module.exports = {
                     500: "#FD7C5F",
                     DEFAULT: "#FD7C5F",
                 },
+                ih_gray: {
+                    300: "#706E6F",
+                    DEFAULT: "#706E6F",
+                },
             },
             animation: {
                 toast: "fade 1s linear 1s forwards",
@@ -68,7 +72,7 @@ module.exports = {
                 1000: "1000",
             },
             width: {
-                "91": "22rem",
+                91: "22rem",
                 100: "25rem",
                 150: "37.5rem",
                 200: "50rem",
