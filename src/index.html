@@ -120,6 +120,8 @@
                         </li>
                     </ul>
                     <button
+                        x-data
+                        @click="$store.getDemo.getADemo()"
                         class="btn btn-primary shrink-0 grow"
                         aria-label="get a demo"
                     >
@@ -183,6 +185,8 @@
                         class="w-full flex flex-col md:items-center lg:flex-row"
                     >
                         <button
+                            x-data
+                            @click="$store.getDemo.getADemo()"
                             class="btn btn-lg btn-primary"
                             aria-label="get a demo"
                         >
@@ -831,6 +835,8 @@
                 >
                     <img class="w-64" src="/img/logos/ih_logo.svg" alt="" />
                     <button
+                        x-data
+                        @click="$store.getDemo.getADemo()"
                         class="w-64 lg:w-auto btn btn-primary"
                         aria-label="get a demo"
                     >
