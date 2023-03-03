@@ -16,6 +16,7 @@
     "vite-plugin-compression": "^0.5.1"
   },
   "dependencies": {
+    "@alpinejs/intersect": "^3.11.1",
     "alpinejs": "^3.11.1"
   }
 }

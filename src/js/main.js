@@ -1,4 +1,7 @@
 import Alpine from "alpinejs";
+import intersect from "@alpinejs/intersect";
+
+Alpine.plugin(intersect);
 
 Alpine.store("menu", {
     isOpen: false,
@@ -11,6 +14,13 @@ Alpine.store("menu", {
     toggle: function () {
         this.isOpen = !this.isOpen;
     },
+});
+
+Alpine.store("visible", {
+    isFooterVisible: false,
+    text: function () {
+        return this.isFooterVisible ? "Footer is visible" : "Footer is not visible";
+    }
 });
 
 Alpine.store("getDemo", {
