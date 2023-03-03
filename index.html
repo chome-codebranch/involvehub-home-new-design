@@ -6,19 +6,20 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Involve Hub</title>
-      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-682478db.js"></script>
-      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-a3d791b4.css">
+      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-a89dfb15.js"></script>
+      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-84476103.css">
     </head>
     <body class="p-0 m-0">
         <div
             x-data
             class="invisible fixed z-50 w-screen h-screen bg-black/50 opacity-0 transition-[opacity,visibility] duration-500"
-            :class="$store.menu.isOpen && '!visible lg:hidden opacity-100'"
+            :class="$store.menu.isOpen && '!visible xl:hidden opacity-100'"
+            @click="$store.menu.close()"
         ></div>
         <nav
             x-data
             class="fixed invisible z-50 top-0 left-0 w-80 md:w-150 h-screen shadow-lg rounded-r-xl bg-white -translate-x-full transition-[visibility,transform] duration-[500ms,500ms] ease-in-out"
-            :class="$store.menu.isOpen && '!visible lg:hidden translate-x-0 transition-[visibility,transform] duration-[0s,500ms]'"
+            :class="$store.menu.isOpen && '!visible xl:hidden translate-x-0 transition-[visibility,transform] duration-[0s,500ms]'"
         >
             <div class="w-full h-full flex flex-col justify-between">
                 <div
@@ -67,6 +68,14 @@
                         <li class="whitespace-nowrap">
                             <a
                                 @click="$store.menu.close()"
+                                href="#volunteering"
+                            >
+                                Volunteering
+                            </a>
+                        </li>
+                        <li class="whitespace-nowrap">
+                            <a
+                                @click="$store.menu.close()"
                                 href="#comunications"
                             >
                                 Comunications
@@ -85,9 +94,14 @@
                 <div class="flex px-7 py-10"></div>
             </div>
         </nav>
-        <main id="app" class="bg-white w-full h-screen">
+        <main
+            id="app"
+            class="bg-white w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
+        >
             <nav
-                class="fixed h-20 lg:h-24 w-full shadow-lg flex gap-4 px-4 md:px-8 justify-between items-center z-40 backdrop-blur-md bg-white/80"
+                x-data
+                class="fixed h-20 lg:h-[6.5rem] w-full shadow-lg flex gap-4 px-4 md:px-8 lg:px-20 xl:px-20 justify-between items-center z-40 bg-white/90 backdrop-blur-md lg:transition-transform"
+                :class="$store.visible.isFooterVisible && 'lg:-translate-y-full'"
             >
                 <div
                     class="h-full min-w-[5rem] lg:min-w-[10rem] max-w-[220px] py-4 shrink grow-0 cursor-pointer"
@@ -100,8 +114,12 @@
                         />
                     </a>
                 </div>
-                <div class="flex gap-4 lg:gap-10 items-center shrink-0">
-                    <ul class="hidden lg:flex gap-10 text-lg font-semibold">
+                <div
+                    class="flex gap-4 lg:gap-5 2xl:gap-10 items-center shrink-0"
+                >
+                    <ul
+                        class="hidden xl:flex gap-5 2xl:gap-10 text-lg font-semibold text-primary-500"
+                    >
                         <li class="whitespace-nowrap">
                             <a href="#engagement">Engagement</a>
                         </li>
@@ -113,6 +131,9 @@
                         </li>
                         <li class="whitespace-nowrap">
                             <a href="#solutions">Solutions</a>
+                        </li>
+                        <li class="whitespace-nowrap">
+                            <a href="#volunteering">Volunteering</a>
                         </li>
                         <li class="whitespace-nowrap">
                             <a href="#comunications">Comunications</a>
@@ -131,7 +152,7 @@
                     </button>
                     <button
                         x-data
-                        class="lg:hidden shrink-0 grow"
+                        class="xl:hidden shrink-0 grow"
                         @click="$store.menu.open()"
                         aria-label="open menu"
                     >
@@ -142,11 +163,15 @@
             <section
                 id="home"
                 class="w-full pt-24 pb-4 min-h-[51rem] bg-[url('/img/background_hero.svg')] bg-cover bg-center flex justify-center items-center"
+                x-data="{homeSectionVisible: false}"
             >
                 <div
-                    class="w-full max-w-[75rem] text-white grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 lg:px-20"
+                    class="w-full text-white grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 lg:px-20"
                 >
-                    <div>
+                    <div
+                        class="self-end opacity-0 max-lg:-translate-y-20 lg:-translate-x-20 transition-all duration-500"
+                        :class="homeSectionVisible && 'opacity-100 !translate-y-0 lg:!translate-x-0'"
+                    >
                         <p
                             class="text-center text-4xl md:text-6xl lg:text-left lg:text-6xl leading-tight"
                         >
@@ -155,27 +180,28 @@
                         </p>
                     </div>
                     <div
-                        class="flex justify-center items-center lg:row-span-3 my-5"
+                        class="flex justify-center items-center lg:row-span-3 -mt-10 -mb-16 sm:-mb-24"
                     >
-                        <div class="max-w-[500px] grid grid-cols-2 gap-4">
-                            <img
-                                class="shadow-lg rounded-lg outline outline-white outline-8 transform rotate-0"
-                                src="/involvehub-home-new-design/assets/hero_picture_1-69a26ece.webp"
-                                alt=""
-                            />
-                            <img
-                                class="shadow-lg rounded-lg outline outline-white outline-8 row-span-2 transform rotate-12 z-10"
-                                src="/involvehub-home-new-design/assets/hero_picture_3-fe921cc2.webp"
-                                alt=""
-                            />
-                            <img
-                                class="shadow-lg rounded-lg outline outline-white outline-8 transform -rotate-6"
-                                src="/involvehub-home-new-design/assets/hero_picture_2-b66b2a2f.webp"
-                                alt=""
-                            />
+                        <div
+                            class="photo-container"
+                            x-intersect.half="homeSectionVisible = true"
+                            :class="homeSectionVisible && 'show'"
+                        >
+                            <div class="photo photo-1">
+                                <img src="/involvehub-home-new-design/assets/hero_picture_1-69a26ece.webp" alt="" />
+                            </div>
+                            <div class="photo photo-2">
+                                <img src="/involvehub-home-new-design/assets/hero_picture_2-fe921cc2.webp" alt="" />
+                            </div>
+                            <div class="photo photo-3">
+                                <img src="/involvehub-home-new-design/assets/hero_picture_3-b66b2a2f.webp" alt="" />
+                            </div>
                         </div>
                     </div>
-                    <div>
+                    <div
+                        class="self-start opacity-0 translate-y-20 transition-all duration-500"
+                        :class="homeSectionVisible && 'opacity-100 !translate-y-0'"
+                    >
                         <p
                             class="text-base text-center md:text-2xl lg:text-left"
                         >
@@ -184,7 +210,8 @@
                         </p>
                     </div>
                     <div
-                        class="w-full flex flex-col md:items-center lg:flex-row"
+                        class="w-full self-start opacity-0 transition-all duration-500 flex flex-col md:items-center lg:flex-row"
+                        :class="homeSectionVisible && 'opacity-100'"
                     >
                         <button
                             x-data
@@ -199,7 +226,7 @@
             </section>
             <section
                 id="engagement"
-                class="w-full pt-24 pb-4 px-4 flex flex-col justify-around"
+                class="w-full pt-24 pb-4 px-4 lg:px-20 flex flex-col justify-around"
             >
                 <p class="text-primary text-center text-3xl my-6">
                     <span class="font-bold">Engaged Employees</span>
@@ -256,13 +283,15 @@
             </section>
             <section
                 id="metrics"
-                class="w-full pt-24 pb-4 px-6 md:px-11 lg:px-16"
+                class="w-full pt-24 pb-4 px-6 md:px-11 lg:px-20"
             >
                 <p class="text-primary text-center text-3xl md:text-5xl mt-6">
                     <span class="font-bold">Fortune 500 Customer</span>
                     Metrics and Results
                 </p>
-                <p class="text-lg md:text-2xl text-center mb-6">
+                <p
+                    class="text-lg md:text-2xl text-center mb-6 text-primary-500"
+                >
                     Customer results and goals from the InvolveHub platform
                 </p>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -413,7 +442,7 @@
                         />
                     </div>
                     <div
-                        class="text-lg md:text-2xl z-10 text-center lg:text-left"
+                        class="text-primary-500 text-lg md:text-2xl z-10 text-center lg:text-left"
                     >
                         <p>
                             InvolveHub manages events including sourcing,
@@ -498,7 +527,7 @@
                         </div>
                     </div>
                     <div
-                        class="flex flex-col gap-8 md:gap-12 lg:border-l lg:border-white lg:pl-12 order-1 lg:order-2 px-10 md:px-14 text-base md:text-center md:text-2xl lg:text-left"
+                        class="text-primary-500 flex flex-col gap-8 md:gap-12 lg:border-l lg:border-white lg:pl-12 order-1 lg:order-2 px-10 md:px-14 text-base md:text-center md:text-2xl lg:text-left"
                     >
                         <p class="font-bold">
                             Volunteer events tied to corporate mission, goals,
@@ -528,7 +557,7 @@
                 </div>
             </section>
             <section
-                id="solutions-2"
+                id="volunteering"
                 class="w-full pt-24 bg-[url('/img/illustrations/background_line.svg')] lg:bg-[url('/img/illustrations/arch.svg')] bg-auto bg-[center_top_15rem] lg:bg-[center_top_-2rem] bg-no-repeat"
             >
                 <div class="w-full text-center">
@@ -708,7 +737,9 @@
                 >
                     People who trusted us
                 </p>
-                <p class="text-base md:text-2xl">Trusted by 1k+ companies</p>
+                <p class="text-primary-500 text-base md:text-2xl">
+                    Trusted by 1k+ companies
+                </p>
                 <div class="flex flex-row items-center gap-4">
                     <div class="flex flex-row gap-2">
                         <img class="w-6" src="/involvehub-home-new-design/assets/star-c9ebde8d.svg" alt="" />
@@ -717,7 +748,9 @@
                         <img class="w-6" src="/involvehub-home-new-design/assets/star-c9ebde8d.svg" alt="" />
                         <img class="w-6" src="/involvehub-home-new-design/assets/star-c9ebde8d.svg" alt="" />
                     </div>
-                    <p class="text-base md:text-2xl">4.1/5 (14k Reviews)</p>
+                    <p class="text-primary-500 text-base md:text-2xl">
+                        4.1/5 (14k Reviews)
+                    </p>
                 </div>
                 <div
                     class="w-full mx-4 my-8 flex flex-row flex-wrap justify-center items-center gap-16"
@@ -755,7 +788,7 @@
                     See what our costumers say
                 </p>
                 <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-7">
-                    <div class="bg-white px-10 py-7 rounded">
+                    <div class="text-primary-500 bg-white px-10 py-7 rounded">
                         <img
                             class="w-32 h-24"
                             src="/involvehub-home-new-design/assets/emailage-626d2ff3.svg"
@@ -775,7 +808,7 @@
                             field on a real-time basis."
                         </p>
                     </div>
-                    <div class="bg-white px-10 py-7 rounded">
+                    <div class="text-primary-500 bg-white px-10 py-7 rounded">
                         <img
                             class="w-32 h-24"
                             src="/involvehub-home-new-design/assets/kemberton-5f3ccfff.svg"
@@ -793,7 +826,7 @@
                             aligned with news and data on the fingertips."
                         </p>
                     </div>
-                    <div class="bg-white px-10 py-7 rounded">
+                    <div class="text-primary-500 bg-white px-10 py-7 rounded">
                         <img
                             class="w-32 h-24"
                             src="/involvehub-home-new-design/assets/founder-64cacbf2.svg"
@@ -811,7 +844,7 @@
                             aligned with news and data on the fingertips."
                         </p>
                     </div>
-                    <div class="bg-white px-10 py-7 rounded">
+                    <div class="text-primary-500 bg-white px-10 py-7 rounded">
                         <img
                             class="w-32 h-24"
                             src="/involvehub-home-new-design/assets/greatlakes-ce7ef896.svg"
@@ -831,7 +864,12 @@
                     </div>
                 </div>
             </section>
-            <footer class="w-full px-16 pb-16">
+            <footer
+                class="text-primary-500 w-full px-16 pb-16"
+                x-data
+                x-intersect:enter.half="$store.visible.isFooterVisible = true"
+                x-intersect:leave.half="$store.visible.isFooterVisible = false"
+            >
                 <div
                     class="w-full mt-16 flex flex-col lg:flex-row gap-4 justify-between items-center"
                 >
