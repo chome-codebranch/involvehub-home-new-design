@@ -10,4 +10,8 @@
     html {
         scroll-behavior: smooth;
     }
+
+    body {
+        @apply overflow-x-hidden w-screen p-0 m-0;
+    }
 }

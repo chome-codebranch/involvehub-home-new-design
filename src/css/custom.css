@@ -3,7 +3,7 @@
 }
 
 .photo-container > .photo {
-    @apply opacity-0 scale-110 border-4 border-white border-solid rounded-2xl bg-slate-400/50 transition-all duration-300 ease-in-out overflow-hidden shadow-lg;
+    @apply opacity-0 scale-110 border-4 border-white border-solid rounded-2xl bg-slate-400/50 transition-all duration-1000 ease-in-out overflow-hidden shadow-lg;
 }
 
 .photo-container > .photo > img {
@@ -15,11 +15,11 @@
 }
 
 .photo-container > .photo-2 {
-    @apply aspect-[3/4] h-[55%] self-center row-span-2 rotate-[10deg] translate-x-0 delay-200 z-[1];
+    @apply aspect-[3/4] h-[55%] self-center row-span-2 rotate-[10deg] translate-x-0 delay-300 z-[1];
 }
 
 .photo-container > .photo-3 {
-    @apply self-start w-[81%] aspect-[4/3] rotate-[-10deg] translate-x-[20%] delay-100;
+    @apply self-start w-[81%] aspect-[4/3] rotate-[-10deg] translate-x-[20%] delay-150;
 }
 
 .photo-container.show > .photo {

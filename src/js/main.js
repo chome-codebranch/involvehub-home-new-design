@@ -4,6 +4,15 @@ import intersect from "@alpinejs/intersect";
 Alpine.plugin(intersect);
 
 Alpine.store("menu", {
+    init() {
+        Alpine.effect(() => {
+            if (this.isOpen) {
+                document.body.classList.add("overflow-hidden");
+            } else {
+                document.body.classList.remove("overflow-hidden");
+            }
+        });
+    },
     isOpen: false,
     open: function () {
         this.isOpen = true;
@@ -19,8 +28,10 @@ Alpine.store("menu", {
 Alpine.store("visible", {
     isFooterVisible: false,
     text: function () {
-        return this.isFooterVisible ? "Footer is visible" : "Footer is not visible";
-    }
+        return this.isFooterVisible
+            ? "Footer is visible"
+            : "Footer is not visible";
+    },
 });
 
 Alpine.store("getDemo", {

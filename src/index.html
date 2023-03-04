@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Involve Hub</title>
     </head>
-    <body class="p-0 m-0">
+    <body x-data :class="$store.menu.isOpen && 'overflow-x-hidden'">
         <div
             x-data
             class="invisible fixed z-50 w-screen h-screen bg-black/50 opacity-0 transition-[opacity,visibility] duration-500"
@@ -43,27 +43,42 @@
                     <ul
                         class="text-2xl md:text-4xl text-primary-500 font-semibold flex flex-col gap-12"
                     >
-                        <li class="whitespace-nowrap">
+                        <li
+                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[000ms]"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                        >
                             <a @click="$store.menu.close()" href="#engagement">
                                 Engagement
                             </a>
                         </li>
-                        <li class="whitespace-nowrap">
+                        <li
+                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[100ms]"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                        >
                             <a @click="$store.menu.close()" href="#metrics">
                                 Metrics
                             </a>
                         </li>
-                        <li class="whitespace-nowrap">
+                        <li
+                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[200ms]"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                        >
                             <a @click="$store.menu.close()" href="#security">
                                 Security
                             </a>
                         </li>
-                        <li class="whitespace-nowrap">
+                        <li
+                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[300ms]"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                        >
                             <a @click="$store.menu.close()" href="#solutions">
                                 Solutions
                             </a>
                         </li>
-                        <li class="whitespace-nowrap">
+                        <li
+                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[400ms]"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                        >
                             <a
                                 @click="$store.menu.close()"
                                 href="#volunteering"
@@ -71,7 +86,10 @@
                                 Volunteering
                             </a>
                         </li>
-                        <li class="whitespace-nowrap">
+                        <li
+                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[500ms]"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                        >
                             <a
                                 @click="$store.menu.close()"
                                 href="#comunications"
@@ -79,7 +97,10 @@
                                 Comunications
                             </a>
                         </li>
-                        <li class="whitespace-nowrap">
+                        <li
+                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[600ms]"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                        >
                             <a
                                 @click="$store.menu.close()"
                                 href="#social-media"
@@ -94,7 +115,7 @@
         </nav>
         <main
             id="app"
-            class="bg-white w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
+            class="bg-white w-full overflow-y-auto overflow-x-hidden scroll-smooth"
         >
             <nav
                 x-data
@@ -113,7 +134,7 @@
                     </a>
                 </div>
                 <div
-                    class="flex gap-4 lg:gap-5 2xl:gap-10 items-center shrink-0"
+                    class="flex gap-4 lg:gap-6 2xl:gap-10 items-center shrink-0"
                 >
                     <ul
                         class="hidden xl:flex gap-5 2xl:gap-10 text-lg font-semibold text-primary-500"
@@ -167,7 +188,7 @@
                     class="w-full text-white grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 lg:px-20"
                 >
                     <div
-                        class="self-end opacity-0 max-lg:-translate-y-20 lg:-translate-x-20 transition-all duration-500"
+                        class="self-end opacity-0 max-lg:-translate-y-20 lg:-translate-x-20 transition-all duration-700"
                         :class="homeSectionVisible && 'opacity-100 !translate-y-0 lg:!translate-x-0'"
                     >
                         <p
@@ -197,7 +218,7 @@
                         </div>
                     </div>
                     <div
-                        class="self-start opacity-0 translate-y-20 transition-all duration-500"
+                        class="self-start opacity-0 translate-y-20 transition-all duration-700"
                         :class="homeSectionVisible && 'opacity-100 !translate-y-0'"
                     >
                         <p
@@ -208,7 +229,7 @@
                         </p>
                     </div>
                     <div
-                        class="w-full self-start opacity-0 transition-all duration-500 flex flex-col md:items-center lg:flex-row"
+                        class="w-full self-start opacity-0 transition-all duration-700 flex flex-col md:items-center lg:flex-row"
                         :class="homeSectionVisible && 'opacity-100'"
                     >
                         <button
@@ -225,6 +246,8 @@
             <section
                 id="engagement"
                 class="w-full pt-24 pb-4 px-4 lg:px-20 flex flex-col justify-around"
+                x-data="{ sectionEngagementVisible: false }"
+                x-intersect.threshold.50="sectionEngagementVisible = true"
             >
                 <p class="text-primary text-center text-3xl my-6">
                     <span class="font-bold">Engaged Employees</span>
@@ -233,7 +256,10 @@
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center text-primary-500"
                 >
-                    <div class="flex flex-col text-center lg:max-w-[20rem]">
+                    <div
+                        class="flex flex-col text-center lg:max-w-[20rem] transition-all duration-700 opacity-0 translate-y-8 delay-[0ms]"
+                        :class="sectionEngagementVisible && 'opacity-100 !translate-y-0'"
+                    >
                         <img
                             class="h-64 lg:h-60"
                             src="/img/illustrations/illustration_1.svg"
@@ -245,7 +271,10 @@
                             contributes to society.
                         </p>
                     </div>
-                    <div class="flex flex-col text-center lg:max-w-[20rem]">
+                    <div
+                        class="flex flex-col text-center lg:max-w-[20rem] transition-all duration-700 opacity-0 translate-y-8 delay-[150ms]"
+                        :class="sectionEngagementVisible && 'opacity-100 !translate-y-0'"
+                    >
                         <img
                             class="h-64 lg:h-60"
                             src="/img/illustrations/illustration_2.svg"
@@ -254,7 +283,10 @@
                         <p class="text-5xl font-bold">50%</p>
                         <p class="">Increase in employee retention.</p>
                     </div>
-                    <div class="flex flex-col text-center lg:max-w-[20rem]">
+                    <div
+                        class="flex flex-col text-center lg:max-w-[20rem] transition-all duration-700 opacity-0 translate-y-8 delay-[300ms]"
+                        :class="sectionEngagementVisible && 'opacity-100 !translate-y-0'"
+                    >
                         <img
                             class="h-64 lg:h-60"
                             src="/img/illustrations/illustration_3.svg"
@@ -265,7 +297,10 @@
                             Companies in the S&P 500 that participate in CSR.
                         </p>
                     </div>
-                    <div class="flex flex-col text-center lg:max-w-[20rem]">
+                    <div
+                        class="flex flex-col text-center lg:max-w-[20rem] transition-all duration-700 opacity-0 translate-y-8 delay-[450ms]"
+                        :class="sectionEngagementVisible && 'opacity-100 !translate-y-0'"
+                    >
                         <img
                             class="h-64 lg:h-60"
                             src="/img/illustrations/illustration_4.svg"
@@ -282,6 +317,8 @@
             <section
                 id="metrics"
                 class="w-full pt-24 pb-4 px-6 md:px-11 lg:px-20"
+                x-data="{ sectionMetricsVisible: false }"
+                x-intersect.threshold.35="sectionMetricsVisible = true"
             >
                 <p class="text-primary text-center text-3xl md:text-5xl mt-6">
                     <span class="font-bold">Fortune 500 Customer</span>
@@ -294,7 +331,8 @@
                 </p>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div
-                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-1"
+                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-1 opacity-0 -translate-x-16 lg:-translate-x-16 transition-all duration-700 delay-[0ms] lg:delay-[0ms]"
+                        :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
                     >
                         <div class="flex gap-3 items-center">
                             <div
@@ -327,7 +365,8 @@
                         </div>
                     </div>
                     <div
-                        class="rounded-lg object-cover overflow-hidden order-2"
+                        class="rounded-lg object-cover overflow-hidden order-2 opacity-0 translate-x-16 lg:translate-x-16 transition-all duration-700 delay-[150ms] lg:delay-[150ms]"
+                        :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
                     >
                         <img
                             class="w-full h-full object-cover"
@@ -337,7 +376,8 @@
                         />
                     </div>
                     <div
-                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-3 lg:order-4"
+                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-3 lg:order-4 opacity-0 -translate-x-16 lg:translate-x-16 transition-all duration-700 delay-[300ms] lg:delay-[450ms]"
+                        :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
                     >
                         <div class="flex gap-3 items-center">
                             <div
@@ -367,7 +407,8 @@
                         </div>
                     </div>
                     <div
-                        class="rounded-lg object-cover overflow-hidden order-4 lg:order-3"
+                        class="rounded-lg object-cover overflow-hidden order-4 lg:order-3 opacity-0 translate-x-16 lg:-translate-x-16 transition-all duration-700 delay-[450ms] lg:delay-[300ms]"
+                        :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
                     >
                         <img
                             class="w-full h-full object-cover"
@@ -377,7 +418,8 @@
                         />
                     </div>
                     <div
-                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-5"
+                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-5 opacity-0 -translate-x-16 lg:-translate-x-16 transition-all duration-700 delay-[600ms] lg:delay-[600ms]"
+                        :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
                     >
                         <div class="flex gap-3 items-center">
                             <div
@@ -409,7 +451,8 @@
                         </div>
                     </div>
                     <div
-                        class="rounded-lg object-cover overflow-hidden order-6"
+                        class="rounded-lg object-cover overflow-hidden order-6 opacity-0 translate-x-16 lg:translate-x-16 transition-all duration-700 delay-[750ms] lg:delay-[750ms]"
+                        :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
                     >
                         <img
                             class="w-full h-full object-cover"
@@ -729,6 +772,8 @@
             <section
                 id="trusted-by"
                 class="w-full pt-24 flex flex-col justify-center items-center"
+                x-data="{ sectionTrustedByVisible: false }"
+                x-intersect.threshold.75="sectionTrustedByVisible = true"
             >
                 <p
                     class="text-primary-300 text-center text-3xl font-bold md:text-5xl"
@@ -751,29 +796,38 @@
                     </p>
                 </div>
                 <div
-                    class="w-full mx-4 my-8 flex flex-row flex-wrap justify-center items-center gap-16"
+                    class="w-full mx-4 my-8 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-16"
                 >
                     <img
-                        class="w-40"
+                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[0ms]"
+                        :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/img/logos/verizon_logo.svg"
                         alt=""
                     />
                     <img
-                        class="w-40"
+                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[150ms]"
+                        :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/img/logos/ghirardelli_logo.svg"
                         alt=""
                     />
                     <img
-                        class="w-40"
+                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[300ms]"
+                        :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/img/logos/waste_connections_logo.svg"
                         alt=""
                     />
                     <img
-                        class="w-40"
+                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[450ms]"
+                        :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/img/logos/multiquip_logo.svg"
                         alt=""
                     />
-                    <img class="w-40" src="/img/logos/adroll_logo.svg" alt="" />
+                    <img
+                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[600ms]"
+                        :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
+                        src="/img/logos/adroll_logo.svg"
+                        alt=""
+                    />
                 </div>
             </section>
             <section
