@@ -5,6 +5,7 @@ export default {
     root: "src",
     plugins: [
         viteCompression({
+            filter: /\.(js|mjs|json|css|html|svg)$/,
             algorithm: "brotliCompress",
         }),
     ],
