@@ -12,6 +12,9 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        permissions:
+            id-token: write
+            contents: read
         strategy:
             matrix:
                 node-version: [18.x]
@@ -34,11 +37,24 @@ jobs:
               run: npm run build --if-present
             # - run: npm test
 
-            - name: Deploy to S3
-              uses: shallwefootball/s3-upload-action@master
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v2
               with:
-                  aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
-                  aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}}
-                  aws_bucket: ${{ secrets.AWS_BUCKET }}
-                  source_dir: "./dist"
-                  # destination_dir: ./
+                  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+                  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  aws-region: us-east-1
+
+            - name: Upload compiled files to S3 Bucket with the AWS CLI
+              env:
+                  AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
+              run: |
+                  aws s3 sync ./dist s3://$AWS_BUCKET --acl public-read
+
+            # - name: Deploy to S3
+            #   uses: shallwefootball/s3-upload-action@master
+            #   with:
+            #       aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
+            #       aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}}
+            #       aws_bucket: ${{ secrets.AWS_BUCKET }}
+            #       source_dir: "./dist"
+            #       # destination_dir: ./
