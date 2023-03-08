@@ -6,8 +6,8 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Involve Hub</title>
-      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-827048ad.js"></script>
-      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-c30d0fa3.css">
+      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-8d76c48e.js"></script>
+      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-6396dead.css">
     </head>
     <body x-data :class="$store.menu.isOpen && 'overflow-x-hidden'">
         <div
@@ -547,7 +547,7 @@
                         class="max-w-full flex flex-row lg:grid ml-10 -space-x-10 lg:space-x-0 lg:grid-cols-2 w-fit order-2 lg:order-1 justify-self-center lg:justify-self-end"
                     >
                         <div
-                            class="transition-[transform,opacity] duration-500 scale-75 opacity-0 w-fit hidden lg:block bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:order-1"
+                            class="z-[1] transition-[transform,opacity] duration-500 scale-75 opacity-0 w-fit hidden lg:block bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:order-1"
                             :class="solutionsSectionVisible && 'opacity-100 delay-[200ms] lg:!scale-100'"
                         >
                             <img
@@ -557,7 +557,7 @@
                             />
                         </div>
                         <div
-                            class="transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-gradient-to-t from-primary to-secondary p-5 rounded-full overflow-hidden lg:translate-y-1/2 lg:-translate-x-1/6 order-2"
+                            class="z-[2] transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-gradient-to-t from-primary to-secondary p-5 rounded-full overflow-hidden lg:translate-y-1/2 lg:-translate-x-1/6 order-2"
                             :class="solutionsSectionVisible && 'opacity-100 delay-[400ms] max-lg:!translate-x-0 lg:!scale-100 lg:delay-[400ms]'"
                         >
                             <img
@@ -567,7 +567,7 @@
                             />
                         </div>
                         <div
-                            class="transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white order-1 lg:order-3 lg:translate-x-0"
+                            class="z-[1] transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white order-1 lg:order-3 lg:translate-x-0"
                             :class="solutionsSectionVisible && 'opacity-100 delay-[200ms] max-lg:!translate-x-0 lg:!scale-100 lg:delay-[600ms]'"
                         >
                             <img
@@ -577,7 +577,7 @@
                             />
                         </div>
                         <div
-                            class="transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:translate-y-1/2 lg:-translate-x-1/6 order-3 lg:order-4"
+                            class="z-[2] transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:translate-y-1/2 lg:-translate-x-1/6 order-3 lg:order-4"
                             :class="solutionsSectionVisible && 'opacity-100 delay-[600ms] max-lg:!translate-x-0 lg:!scale-100 lg:delay-[800ms]'"
                         >
                             <img
@@ -587,7 +587,7 @@
                             />
                         </div>
                         <div
-                            class="transition-[transform,opacity] duration-500 scale-75 opacity-0 w-fit hidden lg:block bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:order-5"
+                            class="z-[1] transition-[transform,opacity] duration-500 scale-75 opacity-0 w-fit hidden lg:block bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:order-5"
                             :class="solutionsSectionVisible && 'opacity-100 delay-[800ms] lg:!scale-100 lg:delay-[1000ms]'"
                         >
                             <img
