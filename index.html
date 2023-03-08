@@ -6,8 +6,8 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Involve Hub</title>
-      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-6e6fb832.js"></script>
-      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-d3a08331.css">
+      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-026cf8ed.js"></script>
+      <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-27a7e071.css">
     </head>
     <body x-data :class="$store.menu.isOpen && 'overflow-x-hidden'">
         <div
@@ -46,40 +46,40 @@
                         class="text-2xl md:text-4xl text-primary-500 font-semibold flex flex-col gap-12"
                     >
                         <li
-                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[000ms]"
-                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                            class="whitespace-nowrap transition-[opacity,transform] opacity-0 -translate-x-60 duration-500"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0 delay-[0ms]'"
                         >
                             <a @click="$store.menu.close()" href="#engagement">
                                 Engagement
                             </a>
                         </li>
                         <li
-                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[100ms]"
-                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                            class="whitespace-nowrap transition-[opacity,transform] opacity-0 -translate-x-60 duration-500"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0 delay-[60ms]'"
                         >
                             <a @click="$store.menu.close()" href="#metrics">
                                 Metrics
                             </a>
                         </li>
                         <li
-                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[200ms]"
-                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                            class="whitespace-nowrap transition-[opacity,transform] opacity-0 -translate-x-60 duration-500"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0 delay-[120ms]'"
                         >
                             <a @click="$store.menu.close()" href="#security">
                                 Security
                             </a>
                         </li>
                         <li
-                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[300ms]"
-                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                            class="whitespace-nowrap transition-[opacity,transform] opacity-0 -translate-x-60 duration-500"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0 delay-[180ms]'"
                         >
                             <a @click="$store.menu.close()" href="#solutions">
                                 Solutions
                             </a>
                         </li>
                         <li
-                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[400ms]"
-                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                            class="whitespace-nowrap transition-[opacity,transform] opacity-0 -translate-x-60 duration-500"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0 delay-[240ms]'"
                         >
                             <a
                                 @click="$store.menu.close()"
@@ -89,8 +89,8 @@
                             </a>
                         </li>
                         <li
-                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[500ms]"
-                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                            class="whitespace-nowrap transition-[opacity,transform] opacity-0 -translate-x-60 duration-500"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0 delay-[300ms]'"
                         >
                             <a
                                 @click="$store.menu.close()"
@@ -100,8 +100,8 @@
                             </a>
                         </li>
                         <li
-                            class="whitespace-nowrap transition-all opacity-0 -translate-x-60 duration-500 delay-[600ms]"
-                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0'"
+                            class="whitespace-nowrap transition-[opacity,transform] opacity-0 -translate-x-60 duration-500"
+                            :class="$store.menu.isOpen && 'opacity-100 !translate-x-0 delay-[360ms]'"
                         >
                             <a
                                 @click="$store.menu.close()"
@@ -121,8 +121,8 @@
         >
             <nav
                 x-data
-                class="fixed h-20 lg:h-[6.5rem] w-full shadow-lg flex gap-4 px-4 md:px-8 lg:px-20 xl:px-20 justify-between items-center z-40 bg-white/90 backdrop-blur-md lg:transition-transform"
-                :class="$store.visible.isFooterVisible && 'lg:-translate-y-full'"
+                class="fixed h-20 lg:h-[6.5rem] w-full shadow-lg flex gap-4 px-4 md:px-8 lg:px-20 xl:px-20 justify-between items-center z-40 bg-white/90 backdrop-blur-md transition-transform"
+                :class="$store.visible.isFooterVisible && '-translate-y-full'"
             >
                 <div
                     class="h-full min-w-[5rem] lg:min-w-[10rem] max-w-[220px] py-4 shrink grow-0 cursor-pointer"
@@ -183,14 +183,14 @@
             </nav>
             <section
                 id="home"
-                class="w-full pt-24 pb-4 min-h-[51rem] bg-[url('/img/background_hero.svg')] bg-cover bg-center flex justify-center items-center"
+                class="w-full pt-24 lg:pt-12 pb-4 min-h-[51rem] bg-[url('/img/background_hero.svg')] bg-cover bg-center flex justify-center items-center"
                 x-data="{homeSectionVisible: false}"
             >
                 <div
                     class="w-full text-white grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 lg:px-20"
                 >
                     <div
-                        class="self-end opacity-0 max-lg:-translate-y-20 lg:-translate-x-20 transition-all duration-700"
+                        class="self-end opacity-0 max-lg:-translate-y-20 lg:-translate-x-20 transition-[opacity,transform] duration-700"
                         :class="homeSectionVisible && 'opacity-100 !translate-y-0 lg:!translate-x-0'"
                     >
                         <p
@@ -202,10 +202,10 @@
                     </div>
                     <div
                         class="flex justify-center items-center lg:row-span-3 -mt-10 -mb-16 sm:-mb-24"
+                        x-intersect="homeSectionVisible = true"
                     >
                         <div
                             class="photo-container"
-                            x-intersect.half="homeSectionVisible = true"
                             :class="homeSectionVisible && 'show'"
                         >
                             <div class="photo photo-1">
@@ -220,7 +220,7 @@
                         </div>
                     </div>
                     <div
-                        class="self-start opacity-0 translate-y-20 transition-all duration-700"
+                        class="self-start opacity-0 translate-y-20 transition-[opacity,transform] duration-700"
                         :class="homeSectionVisible && 'opacity-100 !translate-y-0'"
                     >
                         <p
@@ -231,7 +231,7 @@
                         </p>
                     </div>
                     <div
-                        class="w-full self-start opacity-0 transition-all duration-700 flex flex-col md:items-center lg:flex-row"
+                        class="w-full self-start opacity-0 transition-[opacity,transform] duration-700 flex flex-col md:items-center lg:flex-row"
                         :class="homeSectionVisible && 'opacity-100'"
                     >
                         <button
@@ -247,11 +247,11 @@
             </section>
             <section
                 id="engagement"
-                class="w-full pt-24 pb-4 px-4 lg:px-20 flex flex-col justify-around"
+                class="w-full pt-4 lg:pt-10 pb-4 px-4 lg:px-20 flex flex-col justify-around"
                 x-data="{ sectionEngagementVisible: false }"
-                x-intersect.threshold.50="sectionEngagementVisible = true"
+                x-intersect.threshold.35="sectionEngagementVisible = true"
             >
-                <p class="text-primary text-center text-3xl my-6">
+                <p class="text-primary text-center text-3xl md:text-5xl my-6">
                     <span class="font-bold">Engaged Employees</span>
                     Deliver Better Results
                 </p>
@@ -259,8 +259,9 @@
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center text-primary-500"
                 >
                     <div
-                        class="flex flex-col text-center lg:max-w-[20rem] transition-all duration-700 opacity-0 translate-y-8 delay-[0ms]"
+                        class="flex flex-col text-center lg:max-w-[20rem] transition-[opacity,transform] duration-700 opacity-0 translate-y-8 delay-[0ms]"
                         :class="sectionEngagementVisible && 'opacity-100 !translate-y-0'"
+                        x-intersect.threshold.25="sectionEngagementVisible = true"
                     >
                         <img
                             class="h-64 lg:h-60"
@@ -274,8 +275,9 @@
                         </p>
                     </div>
                     <div
-                        class="flex flex-col text-center lg:max-w-[20rem] transition-all duration-700 opacity-0 translate-y-8 delay-[150ms]"
+                        class="flex flex-col text-center lg:max-w-[20rem] transition-[opacity,transform] duration-700 opacity-0 translate-y-8 delay-[150ms]"
                         :class="sectionEngagementVisible && 'opacity-100 !translate-y-0'"
+                        x-intersect.threshold.25="sectionEngagementVisible = true"
                     >
                         <img
                             class="h-64 lg:h-60"
@@ -286,8 +288,9 @@
                         <p class="">Increase in employee retention.</p>
                     </div>
                     <div
-                        class="flex flex-col text-center lg:max-w-[20rem] transition-all duration-700 opacity-0 translate-y-8 delay-[300ms]"
+                        class="flex flex-col text-center lg:max-w-[20rem] transition-[opacity,transform] duration-700 opacity-0 translate-y-8 delay-[300ms]"
                         :class="sectionEngagementVisible && 'opacity-100 !translate-y-0'"
+                        x-intersect.threshold.25="sectionEngagementVisible = true"
                     >
                         <img
                             class="h-64 lg:h-60"
@@ -300,8 +303,9 @@
                         </p>
                     </div>
                     <div
-                        class="flex flex-col text-center lg:max-w-[20rem] transition-all duration-700 opacity-0 translate-y-8 delay-[450ms]"
+                        class="flex flex-col text-center lg:max-w-[20rem] transition-[opacity,transform] duration-700 opacity-0 translate-y-8 delay-[450ms]"
                         :class="sectionEngagementVisible && 'opacity-100 !translate-y-0'"
+                        x-intersect.threshold.25="sectionEngagementVisible = true"
                     >
                         <img
                             class="h-64 lg:h-60"
@@ -318,9 +322,8 @@
             </section>
             <section
                 id="metrics"
-                class="w-full pt-24 pb-4 px-6 md:px-11 lg:px-20"
+                class="w-full pt-4 lg:pt-10 pb-4 px-6 md:px-11 lg:px-20"
                 x-data="{ sectionMetricsVisible: false }"
-                x-intersect.threshold.35="sectionMetricsVisible = true"
             >
                 <p class="text-primary text-center text-3xl md:text-5xl mt-6">
                     <span class="font-bold">Fortune 500 Customer</span>
@@ -333,8 +336,9 @@
                 </p>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div
-                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-1 opacity-0 -translate-x-16 lg:-translate-x-16 transition-all duration-700 delay-[0ms] lg:delay-[0ms]"
+                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-1 opacity-0 -translate-x-16 lg:-translate-x-16 transition-[opacity,transform] duration-700 delay-[0ms] lg:delay-[0ms]"
                         :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
+                        x-intersect.threshold.25="sectionMetricsVisible = true"
                     >
                         <div class="flex gap-3 items-center">
                             <div
@@ -367,8 +371,9 @@
                         </div>
                     </div>
                     <div
-                        class="rounded-lg object-cover overflow-hidden order-2 opacity-0 translate-x-16 lg:translate-x-16 transition-all duration-700 delay-[150ms] lg:delay-[150ms]"
+                        class="rounded-lg object-cover overflow-hidden order-2 opacity-0 translate-x-16 lg:translate-x-16 transition-[opacity,transform] duration-700 delay-[150ms] lg:delay-[150ms]"
                         :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
+                        x-intersect.threshold.25="sectionMetricsVisible = true"
                     >
                         <img
                             class="w-full h-full object-cover"
@@ -378,8 +383,9 @@
                         />
                     </div>
                     <div
-                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-3 lg:order-4 opacity-0 -translate-x-16 lg:translate-x-16 transition-all duration-700 delay-[300ms] lg:delay-[450ms]"
+                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-3 lg:order-4 opacity-0 -translate-x-16 lg:translate-x-16 transition-[opacity,transform] duration-700 delay-[300ms] lg:delay-[450ms]"
                         :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
+                        x-intersect.threshold.25="sectionMetricsVisible = true"
                     >
                         <div class="flex gap-3 items-center">
                             <div
@@ -409,8 +415,9 @@
                         </div>
                     </div>
                     <div
-                        class="rounded-lg object-cover overflow-hidden order-4 lg:order-3 opacity-0 translate-x-16 lg:-translate-x-16 transition-all duration-700 delay-[450ms] lg:delay-[300ms]"
+                        class="rounded-lg object-cover overflow-hidden order-4 lg:order-3 opacity-0 translate-x-16 lg:-translate-x-16 transition-[opacity,transform] duration-700 delay-[450ms] lg:delay-[300ms]"
                         :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
+                        x-intersect.threshold.25="sectionMetricsVisible = true"
                     >
                         <img
                             class="w-full h-full object-cover"
@@ -420,8 +427,9 @@
                         />
                     </div>
                     <div
-                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-5 opacity-0 -translate-x-16 lg:-translate-x-16 transition-all duration-700 delay-[600ms] lg:delay-[600ms]"
+                        class="rounded-lg bg-primary-50 flex flex-col justify-center py-6 px-7 md:px-10 min-h-[13rem] order-5 opacity-0 -translate-x-16 lg:-translate-x-16 transition-[opacity,transform] duration-700 delay-[600ms] lg:delay-[600ms]"
                         :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
+                        x-intersect.threshold.25="sectionMetricsVisible = true"
                     >
                         <div class="flex gap-3 items-center">
                             <div
@@ -453,12 +461,13 @@
                         </div>
                     </div>
                     <div
-                        class="rounded-lg object-cover overflow-hidden order-6 opacity-0 translate-x-16 lg:translate-x-16 transition-all duration-700 delay-[750ms] lg:delay-[750ms]"
+                        class="rounded-lg object-cover overflow-hidden order-6 opacity-0 translate-x-16 lg:translate-x-16 transition-[opacity,transform] duration-700 delay-[750ms] lg:delay-[750ms]"
                         :class="sectionMetricsVisible && 'opacity-100 !translate-x-0'"
+                        x-intersect.threshold.25="sectionMetricsVisible = true"
                     >
                         <img
                             class="w-full h-full object-cover"
-                            src="/involvehub-home-new-design/assets/step_3-6426de5c.webp"
+                            src="/involvehub-home-new-design/assets/step_3-dfe4f9cb.webp"
                             alt=""
                             srcset=""
                         />
@@ -467,17 +476,25 @@
             </section>
             <section
                 id="security"
-                class="w-full pt-24 pb-24 px-16 lg:pl-32 lg:pr-0"
+                class="w-full pt-10 lg:pt-16 pb-24 px-16 lg:pl-32 lg:pr-0"
+                x-data="{ securitySectionVisible: false }"
+                x-intersect.threshold.35="securitySectionVisible = true"
             >
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="w-full text-center lg:text-left">
+                    <div
+                        class="w-full text-center lg:text-left transition-[opacity,transform] opacity-0 -translate-y-10 duration-500"
+                        :class="securitySectionVisible && 'opacity-100 !translate-y-0'"
+                    >
                         <p
                             class="text-3xl md:text-5xl font-bold text-primary-300"
                         >
                             Security Overview
                         </p>
                     </div>
-                    <div class="flex items-center justify-center lg:row-span-2">
+                    <div
+                        class="flex items-center justify-center lg:row-span-2 transition-[opacity,transform] opacity-0 scale-75 lg:scale-100 lg:translate-x-10 duration-500"
+                        :class="securitySectionVisible && 'opacity-100 !scale-100 lg:!translate-x-0'"
+                    >
                         <img
                             class="my-10 max-h-[18rem] lg:max-h-full lg:-translate-x-32"
                             src="/involvehub-home-new-design/assets/illustration_security-e393a71f.svg"
@@ -485,7 +502,8 @@
                         />
                     </div>
                     <div
-                        class="text-primary-500 text-lg md:text-2xl z-10 text-center lg:text-left"
+                        class="text-primary-500 text-lg md:text-2xl z-10 text-center lg:text-left transition-[opacity,transform] opacity-0 translate-y-10 duration-500"
+                        :class="securitySectionVisible && 'opacity-100 !translate-y-0'"
                     >
                         <p>
                             InvolveHub manages events including sourcing,
@@ -507,11 +525,14 @@
             </section>
             <section
                 id="solutions"
-                class="bg-secondary-50 w-full pt-24 pb-4 flex flex-col gap-6 justify-around items-center"
+                class="bg-secondary-50 w-full pt-10 lg:pt-16 pb-4 flex flex-col gap-6 justify-around items-center"
+                x-data="{ solutionsSectionVisible: false }"
+                x-intersect.threshold.25="solutionsSectionVisible = true"
             >
                 <div class="w-full lg:w-150">
                     <p
-                        class="text-center text-primary-300 text-3xl md:text-5xl leading-tight"
+                        class="opacity-0 -translate-y-16 duration-500 transition-[opacity,transform] text-center text-primary-300 text-3xl md:text-5xl leading-tight"
+                        :class="solutionsSectionVisible && 'opacity-100 !translate-y-0 delay-[500ms]'"
                     >
                         <span class="font-bold">We Deliver a Complete</span>
                         CSR Solution
@@ -524,7 +545,8 @@
                         class="max-w-full flex flex-row lg:grid ml-10 -space-x-10 lg:space-x-0 lg:grid-cols-2 w-fit order-2 lg:order-1 justify-self-center lg:justify-self-end"
                     >
                         <div
-                            class="w-fit hidden lg:block bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:order-1"
+                            class="transition-[transform,opacity] duration-500 scale-75 opacity-0 w-fit hidden lg:block bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:order-1"
+                            :class="solutionsSectionVisible && 'opacity-100 delay-[400ms] scale-100'"
                         >
                             <img
                                 class="aspect-square w-64 rounded-full"
@@ -533,7 +555,8 @@
                             />
                         </div>
                         <div
-                            class="w-fit bg-gradient-to-t from-primary to-secondary p-5 rounded-full overflow-hidden lg:translate-y-1/2 lg:-translate-x-1/6 order-2"
+                            class="transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-gradient-to-t from-primary to-secondary p-5 rounded-full overflow-hidden lg:translate-y-1/2 lg:-translate-x-1/6 order-2"
+                            :class="solutionsSectionVisible && 'opacity-100 delay-[600ms] max-lg:!translate-x-0 lg:!scale-100 lg:delay-[600ms]'"
                         >
                             <img
                                 class="aspect-square w-64 rounded-full"
@@ -542,7 +565,8 @@
                             />
                         </div>
                         <div
-                            class="w-fit bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white order-1 lg:order-3"
+                            class="transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white order-1 lg:order-3 lg:translate-x-0"
+                            :class="solutionsSectionVisible && 'opacity-100 delay-[400ms] max-lg:!translate-x-0 lg:!scale-100 lg:delay-[800ms]'"
                         >
                             <img
                                 class="aspect-square w-64 rounded-full"
@@ -551,7 +575,8 @@
                             />
                         </div>
                         <div
-                            class="w-fit bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:translate-y-1/2 lg:-translate-x-1/6 order-3 lg:order-4"
+                            class="transition-[transform,opacity] translate-x-32 duration-500 lg:scale-75 opacity-0 w-fit bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:translate-y-1/2 lg:-translate-x-1/6 order-3 lg:order-4"
+                            :class="solutionsSectionVisible && 'opacity-100 delay-[800ms] max-lg:!translate-x-0 lg:!scale-100 lg:delay-[1000ms]'"
                         >
                             <img
                                 class="aspect-square w-64 rounded-full"
@@ -560,7 +585,8 @@
                             />
                         </div>
                         <div
-                            class="w-fit hidden lg:block bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:order-5"
+                            class="transition-[transform,opacity] duration-500 scale-75 opacity-0 w-fit hidden lg:block bg-secondary-50 p-5 rounded-full overflow-hidden outline outline-8 outline-white lg:order-5"
+                            :class="solutionsSectionVisible && 'opacity-100 delay-[1000ms] scale-100'"
                         >
                             <img
                                 class="aspect-square w-64 rounded-full"
@@ -572,45 +598,80 @@
                     <div
                         class="text-primary-500 flex flex-col gap-8 md:gap-12 lg:border-l lg:border-white lg:pl-12 order-1 lg:order-2 px-10 md:px-14 text-base md:text-center md:text-2xl lg:text-left"
                     >
-                        <p class="font-bold">
+                        <p
+                            class="font-bold opacity-0 translate-y-16 duration-500 transition-[opacity,transform]"
+                            :class="solutionsSectionVisible && 'opacity-100 !translate-y-0 delay-[400ms]'"
+                        >
                             Volunteer events tied to corporate mission, goals,
                             and values.
                         </p>
-                        <p class="">
+                        <p
+                            class="opacity-0 translate-y-16 duration-500 transition-[opacity,transform]"
+                            :class="solutionsSectionVisible && 'opacity-100 !translate-y-0 delay-[550ms]'"
+                        >
                             Employee can share their passion & skills with
                             co-workers.
                         </p>
-                        <p class="font-bold">
+                        <p
+                            class="font-bold opacity-0 translate-y-16 duration-500 transition-[opacity,transform]"
+                            :class="solutionsSectionVisible && 'opacity-100 !translate-y-0 delay-[700ms]'"
+                        >
                             Capture & share experiences internally and easily on
                             social media.
                         </p>
-                        <p class="">
+                        <p
+                            class="opacity-0 translate-y-16 duration-500 transition-[opacity,transform]"
+                            :class="solutionsSectionVisible && 'opacity-100 !translate-y-0 delay-[850ms]'"
+                        >
                             Select and participate in local and virtual
                             volunteering events.
                         </p>
-                        <p class="font-bold">
+                        <p
+                            class="font-bold opacity-0 translate-y-16 duration-500 transition-[opacity,transform]"
+                            :class="solutionsSectionVisible && 'opacity-100 !translate-y-0 delay-[1000ms]'"
+                        >
                             Measure & record all activity to capture
                             effectiveness.
                         </p>
-                        <p class="">
+                        <p
+                            class="opacity-0 translate-y-16 duration-500 transition-[opacity,transform]"
+                            :class="solutionsSectionVisible && 'opacity-100 !translate-y-0 delay-[1150ms]'"
+                        >
                             Improve customer and investor's perception of your
                             brand.
                         </p>
                     </div>
                 </div>
             </section>
+            <!-- <section
+                id="volunteering"
+                class="relative w-full pt-10 lg:pt-16 bg-[url('/img/illustrations/background_line.svg')] lg:bg-[url('/img/illustrations/arch.svg')] bg-auto bg-[center_top_12rem] lg:bg-[center_top_-2rem] bg-no-repeat"
+            > -->
             <section
                 id="volunteering"
-                class="w-full pt-24 bg-[url('/img/illustrations/background_line.svg')] lg:bg-[url('/img/illustrations/arch.svg')] bg-auto bg-[center_top_15rem] lg:bg-[center_top_-2rem] bg-no-repeat"
+                class="relative w-full pt-10 lg:pt-16"
+                x-data="{ volunteeringSectionVisible: false }"
+                x-intersect.threshold.10="volunteeringSectionVisible = true"
             >
-                <div class="w-full text-center">
+                <div
+                    class="z-0 overflow-hidden w-full h-full absolute top-0 flex justify-center"
+                >
+                    <div
+                        class="max-w-[87rem] min-w-[87rem] transition-transform origin-[top_center] duration-[1500ms] bg-[center_top_10rem] bg-no-repeat bg:auto bg-[url('/img/illustrations/background_line.svg')] -translate-y-full lg:translate-y-0 lg:bg-contain lg:bg-[url('/img/illustrations/arch.svg')] lg:rotate-180 lg:bg-[center_top]"
+                        :class="volunteeringSectionVisible && 'translate-y-0 lg:!rotate-0'"
+                    ></div>
+                </div>
+                <div class="w-full text-center relative">
                     <p class="text-primary text-3xl md:text-5xl">
                         <span class="font-bold">Find Volunteering</span>
                         Causes You Love
                     </p>
                 </div>
                 <div class="w-full h-auto pt-7 flex flex-col items-center">
-                    <div class="w-full flex flex-col items-center">
+                    <div
+                        class="w-full flex flex-col items-center transition-[opacity,transform] opacity-0 -translate-y-20 duration-500"
+                        :class="volunteeringSectionVisible && 'opacity-100 !translate-y-0 delay-[300ms]'"
+                    >
                         <img class="w-150" src="/involvehub-home-new-design/assets/ss_section-5bd73de7.webp" alt="" />
                     </div>
 
@@ -618,7 +679,8 @@
                         class="relative grid grid-cols-1 gap-10 lg:gap-0 lg:grid-cols-3 max-w-full w-300 justify-items-center"
                     >
                         <div
-                            class="p-10 flex flex-col justify-center items-center shadow-lg w-80 md:w-91 z-10 aspect-square bg-secondary-50 rounded-full lg:-translate-y-1/1.5"
+                            class="p-10 flex flex-col justify-center items-center shadow-lg w-80 md:w-91 z-10 aspect-square bg-secondary-50 rounded-full lg:-translate-y-1/1.5 scale-50 opacity-0 transition-[opacity,transform] duration-500"
+                            :class="volunteeringSectionVisible && 'opacity-100 !scale-100 delay-[300ms]'"
                         >
                             <p
                                 class="text-ih_gray-300 text-center text-2xl md:text-3xl font-bold"
@@ -632,7 +694,8 @@
                             </p>
                         </div>
                         <div
-                            class="p-10 flex flex-col justify-center items-center shadow-lg w-80 md:w-91 z-10 aspect-square bg-secondary-50 rounded-full lg:-translate-y-1/4"
+                            class="p-10 flex flex-col justify-center items-center shadow-lg w-80 md:w-91 z-10 aspect-square bg-secondary-50 rounded-full lg:-translate-y-1/4 scale-50 opacity-0 transition-[opacity,transform] duration-500"
+                            :class="volunteeringSectionVisible && 'opacity-100 !scale-100 delay-[600ms]'"
                         >
                             <p
                                 class="text-ih_gray-300 text-center text-2xl md:text-3xl font-bold"
@@ -645,7 +708,8 @@
                             </p>
                         </div>
                         <div
-                            class="p-10 flex flex-col justify-center items-center shadow-lg w-80 md:w-91 z-10 aspect-square bg-secondary-50 rounded-full lg:-translate-y-1/1.5"
+                            class="p-10 flex flex-col justify-center items-center shadow-lg w-80 md:w-91 z-10 aspect-square bg-secondary-50 rounded-full lg:-translate-y-1/1.5 scale-50 opacity-0 transition-[opacity,transform] duration-500"
+                            :class="volunteeringSectionVisible && 'opacity-100 !scale-100 delay-[900ms]'"
                         >
                             <p
                                 class="text-ih_gray-300 text-center text-2xl md:text-3xl font-bold"
@@ -660,12 +724,12 @@
                     </div>
                 </div>
             </section>
-            <section id="comunications" class="w-full pt-24 pb-0 mb-0">
+            <section id="comunications" class="w-full pt-5 lg:pt-11 pb-0 mb-0">
                 <div
                     class="w-full text-center flex justify-center px-6 pt-4 pb-10"
                 >
                     <p
-                        class="text-primary-300 text-2xl md:text-5xl max-w-[60rem]"
+                        class="text-primary-300 text-3xl md:text-5xl max-w-[60rem]"
                     >
                         <span class="font-bold">
                             InvolveHub has Built-in Corporate
@@ -676,7 +740,7 @@
                 <div class="w-full -mb-28 lg:-mb-40">
                     <img
                         class="w-full"
-                        src="/involvehub-home-new-design/assets/section_background-1ed37ce4.webp"
+                        src="/involvehub-home-new-design/assets/section_background-cc2fa69b.webp"
                         alt=""
                     />
                     <div
@@ -735,24 +799,28 @@
             </section>
             <section
                 id="social-media"
-                class="w-full pt-24 flex flex-row justify-center items-center"
+                class="w-full pt-10 lg:pt-16 flex flex-row justify-center items-center"
             >
                 <div
-                    class="mb-0 grid grid-cols-1 relative lg:p-24 lg:pt-0 lg:grid-cols-[2fr_1fr] lg:max-w-[75rem]"
+                    class="mb-0 grid grid-cols-1 gap-8 lg:gap-0 relative lg:p-24 lg:pt-0 lg:grid-cols-[2fr_1fr] lg:max-w-[75rem]"
                 >
-                    <p
-                        class="text-primary-300 px-8 text-center text-3xl md:text-5xl lg:text-left lg:px-0"
+                    <div
+                        class="w-full text-primary-300 px-8 text-center text-3xl sm:px-32 md:text-5xl lg:px-0 lg:text-left"
                     >
-                        <span class="font-bold">We Make Sharing Company</span>
-                        Activity on Social Media Easy
-                    </p>
+                        <p class="leading-normal">
+                            <span class="font-bold">
+                                We Make Sharing Company
+                            </span>
+                            Activity on Social Media Easy
+                        </p>
+                    </div>
                     <img
-                        class="z-10 -mb-24 place-self-center w-100 md:w-150 md:-mb-40 lg:mb-0 lg:absolute lg:-right-0 lg:w-150 lg:-bottom-0 xl:w-200 xl:-bottom-20"
+                        class="z-10 -mb-24 place-self-center w-100 md:w-150 md:-mb-40 lg:mb-0 lg:absolute lg:-right-0 lg:w-150 lg:-bottom-0 xl:w-200 xl:-bottom-8"
                         src="/involvehub-home-new-design/assets/sm_image-09e06cc4.webp"
                         alt=""
                     />
                     <div
-                        class="w-full bg-primary-300 px-8 py-20 md:py-44 md:px-28 lg:p-8 lg:mt-12 lg:rounded-lg lg:col-span-2 lg:pr-[24rem] xl:pr-[32rem]"
+                        class="w-full bg-primary-300 px-8 py-20 md:pt-44 md:pb-24 md:px-28 lg:p-8 lg:mt-12 lg:rounded-lg lg:col-span-2 lg:pr-[24rem] xl:pr-[32rem]"
                     >
                         <p class="text-lg md:text-2xl text-white leading-tight">
                             <span class="font-bold">Our tools</span>
@@ -773,9 +841,9 @@
             </section>
             <section
                 id="trusted-by"
-                class="w-full pt-24 flex flex-col justify-center items-center"
+                class="w-full mt-16 xl:mt-32 flex flex-col justify-center items-center"
                 x-data="{ sectionTrustedByVisible: false }"
-                x-intersect.threshold.75="sectionTrustedByVisible = true"
+                x-intersect.threshold.25="sectionTrustedByVisible = true"
             >
                 <p
                     class="text-primary-300 text-center text-3xl font-bold md:text-5xl"
@@ -787,45 +855,70 @@
                 </p>
                 <div class="flex flex-row items-center gap-4">
                     <div class="flex flex-row gap-2">
-                        <img class="w-6" src="/involvehub-home-new-design/assets/star-c9ebde8d.svg" alt="" />
-                        <img class="w-6" src="/involvehub-home-new-design/assets/star-c9ebde8d.svg" alt="" />
-                        <img class="w-6" src="/involvehub-home-new-design/assets/star-c9ebde8d.svg" alt="" />
-                        <img class="w-6" src="/involvehub-home-new-design/assets/star-c9ebde8d.svg" alt="" />
-                        <img class="w-6" src="/involvehub-home-new-design/assets/star-c9ebde8d.svg" alt="" />
+                        <img
+                            class="w-6 opacity-0 scale-250 transition-[opacity,transform] duration-500"
+                            :class="sectionTrustedByVisible && 'opacity-100 !scale-100 delay-[100ms]'"
+                            src="/involvehub-home-new-design/assets/star-c9ebde8d.svg"
+                            alt=""
+                        />
+                        <img
+                            class="w-6 opacity-0 scale-250 transition-[opacity,transform] duration-500"
+                            :class="sectionTrustedByVisible && 'opacity-100 !scale-100 delay-[250ms]'"
+                            src="/involvehub-home-new-design/assets/star-c9ebde8d.svg"
+                            alt=""
+                        />
+                        <img
+                            class="w-6 opacity-0 scale-250 transition-[opacity,transform] duration-500"
+                            :class="sectionTrustedByVisible && 'opacity-100 !scale-100 delay-[400ms]'"
+                            src="/involvehub-home-new-design/assets/star-c9ebde8d.svg"
+                            alt=""
+                        />
+                        <img
+                            class="w-6 opacity-0 scale-250 transition-[opacity,transform] duration-500"
+                            :class="sectionTrustedByVisible && 'opacity-100 !scale-100 delay-[550ms]'"
+                            src="/involvehub-home-new-design/assets/star-c9ebde8d.svg"
+                            alt=""
+                        />
+                        <img
+                            class="w-6 opacity-0 scale-250 transition-[opacity,transform] duration-500"
+                            :class="sectionTrustedByVisible && 'opacity-100 !scale-100 delay-[700ms]'"
+                            src="/involvehub-home-new-design/assets/star-c9ebde8d.svg"
+                            alt=""
+                        />
                     </div>
                     <p class="text-primary-500 text-base md:text-2xl">
                         4.1/5 (14k Reviews)
                     </p>
                 </div>
                 <div
-                    class="w-full mx-4 my-8 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-16"
+                    class="w-full mx-4 my-8 lg:px-8 lg:my-16 flex flex-col sm:flex-row flex-wrap justify-center items-center gap-16"
                 >
                     <img
-                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[0ms]"
+                        class="w-60 sm:w-40 h-20 opacity-0 translate-y-4 transition-[opacity,transform] duration-500 delay-[150ms]"
                         :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/involvehub-home-new-design/assets/verizon_logo-593d4d3c.svg"
                         alt=""
                     />
                     <img
-                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[150ms]"
+                        class="w-60 sm:w-40 h-20 opacity-0 translate-y-4 transition-[opacity,transform] duration-500 delay-[300ms]"
                         :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/involvehub-home-new-design/assets/ghirardelli_logo-20e094e8.svg"
                         alt=""
                     />
                     <img
-                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[300ms]"
+                        class="w-60 sm:w-40 h-20 opacity-0 translate-y-4 transition-[opacity,transform] duration-500 delay-[450ms]"
                         :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/involvehub-home-new-design/assets/waste_connections_logo-c572703d.svg"
                         alt=""
                     />
                     <img
-                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[450ms]"
+                        class="w-60 sm:w-40 h-20 opacity-0 translate-y-4 transition-[opacity,transform] duration-500 delay-[600ms]"
                         :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/involvehub-home-new-design/assets/multiquip_logo-3e499c60.svg"
                         alt=""
                     />
                     <img
-                        class="w-40 h-20 opacity-0 translate-y-4 transition-all duration-500 delay-[600ms]"
+                        class="w-60 sm:w-40 h-20 opacity-0 translate-y-4 transition-[opacity,transform] duration-500 delay-[750ms]"
                         :class="sectionTrustedByVisible && 'opacity-100 !translate-y-0'"
                         src="/involvehub-home-new-design/assets/adroll_logo-1b6fc1b1.svg"
                         alt=""
@@ -999,7 +1092,7 @@
                 </p>
             </footer>
         </main>
-        <div
+        <!-- <div
             class="w-full fixed bottom-4 flex justify-center z-50 pointer-events-none"
         >
             <div
@@ -1017,7 +1110,7 @@
             >
                 <span>Mobile</span>
             </div>
-        </div>
+        </div> -->
         
     </body>
 </html>
