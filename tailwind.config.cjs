@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
     content: ["./src/**/*.{html,js}"],
@@ -17,7 +17,6 @@ module.exports = {
         //     "6xl": "3.75rem",
         // },
         extend: {
-            
             fontFamily: {
                 sans: ["Poppins", ...defaultTheme.fontFamily.sans],
                 serif: ["Vollkorn", ...defaultTheme.fontFamily.serif],
@@ -57,6 +56,14 @@ module.exports = {
                 "1/5": "20%",
                 "1/6": "16.666667%",
                 "1/10": "10%",
+            },
+            scale: {
+                175: "1.75",
+                200: "2",
+                225: "2.25",
+                250: "2.5",
+                275: "2.75",
+                300: "3",
             },
             zIndex: {
                 60: "60",
