@@ -6,7 +6,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Involve Hub</title>
-      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-8d76c48e.js"></script>
+      <script type="module" crossorigin src="/involvehub-home-new-design/assets/main-cd101934.js"></script>
       <link rel="stylesheet" href="/involvehub-home-new-design/assets/main-6396dead.css">
     </head>
     <body x-data :class="$store.menu.isOpen && 'overflow-x-hidden'">
@@ -168,7 +168,7 @@
                         @click="$store.getDemo.getADemo()"
                         class="btn btn-primary shrink-0 grow"
                         aria-label="get a demo"
-                        disabled="disabled"
+                        :disabled="false"
                     >
                         GET A DEMO
                     </button>
@@ -240,7 +240,7 @@
                             @click="$store.getDemo.getADemo()"
                             class="btn btn-lg btn-primary"
                             aria-label="get a demo"
-                            disabled="disabled"
+                            :disabled="false"
                         >
                             GET A DEMO
                         </button>
@@ -1028,7 +1028,7 @@
                         @click="$store.getDemo.getADemo()"
                         class="w-64 lg:w-auto btn btn-primary"
                         aria-label="get a demo"
-                        disabled="disabled"
+                        :disabled="false"
                     >
                         GET A DEMO
                     </button>
